@@ -12,7 +12,7 @@
 import dayjs from '../../../utils/dayjs'
 
 // 相识的日子
-const start_stamp = '2021-03-26'
+const start_stamp = '2018-07-22'
 
 export const textCardTemplate = (data: TextCardTemplateProps) => {
   const {
@@ -66,11 +66,6 @@ ${win}：${win_speed_day}
 今日最高温度仅为🥶 ${tem1}℃，可冷可冷了~
 鱼崽崽可要注意保暖哦~\n`
   }
-
-  //   if (air_tips) {
-  //     description += `
-  // 出行建议：${air_tips}`
-  //   }
 
   if (oneWord) {
     description += `

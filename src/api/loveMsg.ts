@@ -1,12 +1,12 @@
 import axios from 'axios'
 import { getTian } from '../utils/http'
-
+const {WEATHER_SECRET_KEY} = process.env
 /**
  * 给女朋友发送内容的相关接口
  */
 enum LoveMsgURL {
   // 天气
-  weather = 'https://v0.yiketianqi.com/api?unescape=1&version=v61&appid=43656176&appsecret=I42og6Lm',
+  weather = `https://v0.yiketianqi.com/api?unescape=1&version=v61&appid=95341781`,
   // 每日简报
   dailyBriefing = 'http://api.tianapi.com/bulletin/index',
   // 今日头条
@@ -52,7 +52,7 @@ class API {
   // 天气
   async getWeather(city_name: string): Promise<IWeatherResponseProps | null> {
     try {
-      const response = await axios({ url: LoveMsgURL.weather, params: { city: city_name } })
+      const response = await axios({ url: LoveMsgURL.weather, params: { city: city_name,appsecret:WEATHER_SECRET_KEY } })
       const result = response.data
       // 预警天气
       if (!result.alarm.alarm_type && !result.alarm_content)
