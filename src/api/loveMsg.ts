@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { getTian } from '../utils/http'
 const {WEATHER_SECRET_KEY} = process.env
+console.log(process.env);
+
 console.log('天气api' + WEATHER_SECRET_KEY);
 
 /**
